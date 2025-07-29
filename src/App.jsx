@@ -71,7 +71,7 @@ function App() {
               <p><strong>Titolo:</strong> {film.title}</p>
               <p><strong>Titolo Originale:</strong> {film.original_title}</p>
               <p><strong>Language:</strong> {fleg(film.original_language)} ({film.original_language})</p>
-              <p><strong>Voto:</strong> {film.vote_average}</p>
+              <p><strong>Vote:</strong> {'⭐'.repeat(Math.round(film.vote_average / 2))}</p>
               <hr />
             </li>
           ))}
@@ -89,7 +89,7 @@ function App() {
               <p><strong>Titolo:</strong> {serie.name}</p>
               <p><strong>Titolo Originale:</strong> {serie.original_name}</p>
               <p><strong>Language:</strong> {fleg(serie.original_language)} ({serie.original_language})</p>
-              <p><strong>Voto:</strong> {serie.vote_average}</p>
+              <p><strong>Vote:</strong> {'⭐'.repeat(Math.round(serie.vote_average / 2))}</p>
               <hr />
             </li>
           ))}
