@@ -5,8 +5,10 @@ const api_key = import.meta.env.VITE_SOME_KEY
 function App() {
   const [query, setQuery] = useState('');
   const [films, setFilms] = useState([]);
+  const [series, setSeries] = useState([]);
 
-  const cercaFilm = () => {
+
+  const cercaFilmESerie = () => {
     if (!query.trim()) return;
 
     // Chiamata all'API
@@ -15,6 +17,14 @@ function App() {
       .then(data => {
         setFilms(data.results);
       })
+
+
+    fetch(`https://api.themoviedb.org/3/search/tv?api_key=${api_key}&query=${query}`)
+      .then(response => response.json())
+      .then(data => {
+        setSeries(data.results);
+      })
+
   };
 
   function fleg(lang) {
@@ -37,21 +47,22 @@ function App() {
 
   return (
     <div>
-      <h1>Ricerca Film</h1>
+      <h1>Ricerca Film & Serie Tv</h1>
 
       {/* Barra di ricerca */}
       <div>
         <input
           type="text"
-          placeholder="Scrivi il titolo del film"
+          placeholder="Scrivi il titolo del film/serieTv"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button onClick={cercaFilm}>Cerca</button>
+        <button onClick={cercaFilmESerie}>Cerca</button>
       </div>
 
       {/* Lista dei film trovati */}
-      <div>
+      <section>
+        <h2>Film</h2>
         {films.length === 0 && <p>Nessun risultato trovato.</p>}
         <ul>
           {films.map((film) => (
@@ -64,7 +75,24 @@ function App() {
             </li>
           ))}
         </ul>
-      </div>
+      </section>
+
+      {/* Lista delle Serie trovate */}
+      <section>
+        <h2>Serie Tv</h2>
+        {series.length === 0 && <p>Nessun risultato trovato.</p>}
+        <ul>
+          {series.map((serie) => (
+            <li key={serie.id}>
+              <p><strong>Titolo:</strong> {serie.name}</p>
+              <p><strong>Titolo Originale:</strong> {serie.original_name}</p>
+              <p><strong>Language:</strong> {fleg(serie.original_language)} ({serie.original_language})</p>
+              <p><strong>Voto:</strong> {serie.vote_average}</p>
+              <hr />
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }
