@@ -17,6 +17,24 @@ function App() {
       })
   };
 
+  function fleg(lang) {
+    const flags = {
+      en: '🇬🇧',
+      it: '🇮🇹',
+      fr: '🇫🇷',
+      es: '🇪🇸',
+      de: '🇩🇪',
+      ja: '🇯🇵',
+      ru: '🇷🇺',
+      zh: '🇨🇳',
+      ar: '🇸🇦',
+      pt: '🇵🇹'
+    };
+
+    return flags[lang] || '🏳️';
+  }
+
+
   return (
     <div>
       <h1>Ricerca Film</h1>
@@ -40,7 +58,7 @@ function App() {
             <li key={film.id}>
               <p><strong>Titolo:</strong> {film.title}</p>
               <p><strong>Titolo Originale:</strong> {film.original_title}</p>
-              <p><strong>Lingua:</strong> {film.original_language}</p>
+              <p><strong>Language:</strong> {fleg(film.original_language)} ({film.original_language})</p>
               <p><strong>Voto:</strong> {film.vote_average}</p>
               <hr />
             </li>
