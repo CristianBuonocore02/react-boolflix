@@ -67,6 +67,7 @@ function App() {
         <ul>
           {films.map((film) => (
             <li key={film.id}>
+              <img src={`https://image.tmdb.org/t/p/w342${film.poster_path}`} alt={film.title} />
               <p><strong>Titolo:</strong> {film.title}</p>
               <p><strong>Titolo Originale:</strong> {film.original_title}</p>
               <p><strong>Language:</strong> {fleg(film.original_language)} ({film.original_language})</p>
@@ -84,6 +85,7 @@ function App() {
         <ul>
           {series.map((serie) => (
             <li key={serie.id}>
+              <img src={`https://image.tmdb.org/t/p/w342${serie.poster_path}`} alt={serie.name} />
               <p><strong>Titolo:</strong> {serie.name}</p>
               <p><strong>Titolo Originale:</strong> {serie.original_name}</p>
               <p><strong>Language:</strong> {fleg(serie.original_language)} ({serie.original_language})</p>
