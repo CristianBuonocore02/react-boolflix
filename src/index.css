@@ -1,0 +1,81 @@
+.imput {
+    margin-right: 3rem;
+}
+
+.titolo {
+    margin-left: 2rem;
+}
+
+.title {
+    text-align: center;
+    margin: 20px 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo {
+    width: 160px;
+    align-items: center;
+    margin-left: 4rem;
+}
+
+.navbar {
+    background-color: black;
+    padding: 15px 0px;
+}
+
+main {
+    background-color: lightgray;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+.rounded {
+    align-items: center;
+    vertical-align: middle;
+}
+
+.btn {
+    margin-left: 1rem;
+}
+
+ul {
+    display: flex;
+    gap: 5rem;
+    list-style: none;
+}
+
+.immagine {
+    position: absolute;
+    z-index: 1;
+    opacity: 100%;
+    top: 22%;
+}
+
+.immagine:hover {
+    opacity: 10%;
+    transition: 0.5s;
+}
+
+.scritte {
+    position: relative;
+    background-color: black;
+    color: white;
+    width: 342px;
+    padding: 171px 15px;
+    text-align: center;
+
+}
+
+.immagineSerie {
+    position: absolute;
+    z-index: 1;
+    opacity: 100%;
+    top: 111%;
+}
+
+.immagineSerie:hover {
+    opacity: 10%;
+    transition: 0.5s;
+}
