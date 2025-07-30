@@ -40,17 +40,17 @@ body {
     margin-left: 1rem;
 }
 
-ul {
-    display: flex;
-    gap: 5rem;
-    list-style: none;
-}
 
 .immagine {
-    position: absolute;
-    z-index: 1;
+    position: relative;
     opacity: 100%;
-    top: 22%;
+    display: block;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.col img {
+    height: 484px;
 }
 
 .immagine:hover {
@@ -59,14 +59,27 @@ ul {
 }
 
 .scritte {
+    z-index: 0;
     position: relative;
+    bottom: 50%;
     background-color: black;
     color: white;
-    width: 342px;
-    padding: 171px 15px;
+    width: 320px;
+    margin: 0 auto;
+    padding: 100px 20px;
     text-align: center;
+    height: 484px;
+    display: grid;
+    place-content: center;
 
 }
+
+
+.scritte p {
+    align-items: center;
+
+}
+
 
 .immagineSerie {
     position: absolute;
